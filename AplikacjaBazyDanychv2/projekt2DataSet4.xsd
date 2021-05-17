@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="projekt2DataSet4" targetNamespace="http://tempuri.org/projekt2DataSet4.xsd" xmlns:mstns="http://tempuri.org/projekt2DataSet4.xsd" xmlns="http://tempuri.org/projekt2DataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="projekt2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="projekt2ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AplikacjaBazyDanychv2.Properties.Settings.GlobalReference.Default.projekt2ConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="cennikviewTableAdapter" GeneratorDataComponentClassName="cennikviewTableAdapter" Name="cennikview" UserDataComponentName="cennikviewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projekt2ConnectionString (Settings)" DbObjectName="projekt2.cennikview" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Id`, `CzasWypozyczenia`, `KosztWypozyczenia`, `RodzajSprzetu_IdRodzajuSprzetu`, `NazwaSprzetu` FROM `projekt2`.`cennikview`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="CzasWypozyczenia" DataSetColumn="CzasWypozyczenia" />
+              <Mapping SourceColumn="KosztWypozyczenia" DataSetColumn="KosztWypozyczenia" />
+              <Mapping SourceColumn="RodzajSprzetu_IdRodzajuSprzetu" DataSetColumn="RodzajSprzetu_IdRodzajuSprzetu" />
+              <Mapping SourceColumn="NazwaSprzetu" DataSetColumn="NazwaSprzetu" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sprzetviewTableAdapter" GeneratorDataComponentClassName="sprzetviewTableAdapter" Name="sprzetview" UserDataComponentName="sprzetviewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projekt2ConnectionString (Settings)" DbObjectName="projekt2.sprzetview" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `IdSprzetu`, `Dostepnosc`, `Rozmiar`, `Uwagi`, `RodzajSprzetu_IdRodzajuSprzetu`, `NazwaSprzetu` FROM `projekt2`.`sprzetview`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdSprzetu" DataSetColumn="IdSprzetu" />
+              <Mapping SourceColumn="Dostepnosc" DataSetColumn="Dostepnosc" />
+              <Mapping SourceColumn="Rozmiar" DataSetColumn="Rozmiar" />
+              <Mapping SourceColumn="Uwagi" DataSetColumn="Uwagi" />
+              <Mapping SourceColumn="RodzajSprzetu_IdRodzajuSprzetu" DataSetColumn="RodzajSprzetu_IdRodzajuSprzetu" />
+              <Mapping SourceColumn="NazwaSprzetu" DataSetColumn="NazwaSprzetu" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="wypozyczeniaviewTableAdapter" GeneratorDataComponentClassName="wypozyczeniaviewTableAdapter" Name="wypozyczeniaview" UserDataComponentName="wypozyczeniaviewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projekt2ConnectionString (Settings)" DbObjectName="projekt2.wypozyczeniaview" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `IdWypozyczenia`, `DataWypozyczenia`, `DataZwrotu`, `CzasWypozyczenia`, `KwotaWypozyczenia`, `UzytkownicySystemu_IdUzytkownika`, `Klienci_IdKlienta`, `Imie`, `Nazwisko` FROM `projekt2`.`wypozyczeniaview`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdWypozyczenia" DataSetColumn="IdWypozyczenia" />
+              <Mapping SourceColumn="DataWypozyczenia" DataSetColumn="DataWypozyczenia" />
+              <Mapping SourceColumn="DataZwrotu" DataSetColumn="DataZwrotu" />
+              <Mapping SourceColumn="CzasWypozyczenia" DataSetColumn="CzasWypozyczenia" />
+              <Mapping SourceColumn="KwotaWypozyczenia" DataSetColumn="KwotaWypozyczenia" />
+              <Mapping SourceColumn="UzytkownicySystemu_IdUzytkownika" DataSetColumn="UzytkownicySystemu_IdUzytkownika" />
+              <Mapping SourceColumn="Klienci_IdKlienta" DataSetColumn="Klienci_IdKlienta" />
+              <Mapping SourceColumn="Imie" DataSetColumn="Imie" />
+              <Mapping SourceColumn="Nazwisko" DataSetColumn="Nazwisko" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="projekt2DataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="projekt2DataSet4" msprop:Generator_UserDSName="projekt2DataSet4">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="cennikview" msprop:Generator_TableClassName="cennikviewDataTable" msprop:Generator_TableVarName="tablecennikview" msprop:Generator_TablePropName="cennikview" msprop:Generator_RowDeletingName="cennikviewRowDeleting" msprop:Generator_RowChangingName="cennikviewRowChanging" msprop:Generator_RowEvHandlerName="cennikviewRowChangeEventHandler" msprop:Generator_RowDeletedName="cennikviewRowDeleted" msprop:Generator_UserTableName="cennikview" msprop:Generator_RowChangedName="cennikviewRowChanged" msprop:Generator_RowEvArgName="cennikviewRowChangeEvent" msprop:Generator_RowClassName="cennikviewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="CzasWypozyczenia" msprop:Generator_ColumnVarNameInTable="columnCzasWypozyczenia" msprop:Generator_ColumnPropNameInRow="CzasWypozyczenia" msprop:Generator_ColumnPropNameInTable="CzasWypozyczeniaColumn" msprop:Generator_UserColumnName="CzasWypozyczenia" type="xs:duration" />
+              <xs:element name="KosztWypozyczenia" msprop:Generator_ColumnVarNameInTable="columnKosztWypozyczenia" msprop:Generator_ColumnPropNameInRow="KosztWypozyczenia" msprop:Generator_ColumnPropNameInTable="KosztWypozyczeniaColumn" msprop:Generator_UserColumnName="KosztWypozyczenia" type="xs:int" />
+              <xs:element name="RodzajSprzetu_IdRodzajuSprzetu" msprop:Generator_ColumnVarNameInTable="columnRodzajSprzetu_IdRodzajuSprzetu" msprop:Generator_ColumnPropNameInRow="RodzajSprzetu_IdRodzajuSprzetu" msprop:Generator_ColumnPropNameInTable="RodzajSprzetu_IdRodzajuSprzetuColumn" msprop:Generator_UserColumnName="RodzajSprzetu_IdRodzajuSprzetu" type="xs:int" />
+              <xs:element name="NazwaSprzetu" msprop:Generator_ColumnVarNameInTable="columnNazwaSprzetu" msprop:Generator_ColumnPropNameInRow="NazwaSprzetu" msprop:Generator_ColumnPropNameInTable="NazwaSprzetuColumn" msprop:Generator_UserColumnName="NazwaSprzetu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sprzetview" msprop:Generator_TableClassName="sprzetviewDataTable" msprop:Generator_TableVarName="tablesprzetview" msprop:Generator_TablePropName="sprzetview" msprop:Generator_RowDeletingName="sprzetviewRowDeleting" msprop:Generator_RowChangingName="sprzetviewRowChanging" msprop:Generator_RowEvHandlerName="sprzetviewRowChangeEventHandler" msprop:Generator_RowDeletedName="sprzetviewRowDeleted" msprop:Generator_UserTableName="sprzetview" msprop:Generator_RowChangedName="sprzetviewRowChanged" msprop:Generator_RowEvArgName="sprzetviewRowChangeEvent" msprop:Generator_RowClassName="sprzetviewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdSprzetu" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdSprzetu" msprop:Generator_ColumnPropNameInRow="IdSprzetu" msprop:Generator_ColumnPropNameInTable="IdSprzetuColumn" msprop:Generator_UserColumnName="IdSprzetu" type="xs:int" />
+              <xs:element name="Dostepnosc" msprop:Generator_ColumnVarNameInTable="columnDostepnosc" msprop:Generator_ColumnPropNameInRow="Dostepnosc" msprop:Generator_ColumnPropNameInTable="DostepnoscColumn" msprop:Generator_UserColumnName="Dostepnosc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rozmiar" msprop:Generator_ColumnVarNameInTable="columnRozmiar" msprop:Generator_ColumnPropNameInRow="Rozmiar" msprop:Generator_ColumnPropNameInTable="RozmiarColumn" msprop:Generator_UserColumnName="Rozmiar" type="xs:float" minOccurs="0" />
+              <xs:element name="Uwagi" msprop:Generator_ColumnVarNameInTable="columnUwagi" msprop:Generator_ColumnPropNameInRow="Uwagi" msprop:Generator_ColumnPropNameInTable="UwagiColumn" msprop:Generator_UserColumnName="Uwagi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="160" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RodzajSprzetu_IdRodzajuSprzetu" msprop:Generator_ColumnVarNameInTable="columnRodzajSprzetu_IdRodzajuSprzetu" msprop:Generator_ColumnPropNameInRow="RodzajSprzetu_IdRodzajuSprzetu" msprop:Generator_ColumnPropNameInTable="RodzajSprzetu_IdRodzajuSprzetuColumn" msprop:Generator_UserColumnName="RodzajSprzetu_IdRodzajuSprzetu" type="xs:int" />
+              <xs:element name="NazwaSprzetu" msprop:Generator_ColumnVarNameInTable="columnNazwaSprzetu" msprop:Generator_ColumnPropNameInRow="NazwaSprzetu" msprop:Generator_ColumnPropNameInTable="NazwaSprzetuColumn" msprop:Generator_UserColumnName="NazwaSprzetu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="wypozyczeniaview" msprop:Generator_TableClassName="wypozyczeniaviewDataTable" msprop:Generator_TableVarName="tablewypozyczeniaview" msprop:Generator_TablePropName="wypozyczeniaview" msprop:Generator_RowDeletingName="wypozyczeniaviewRowDeleting" msprop:Generator_RowChangingName="wypozyczeniaviewRowChanging" msprop:Generator_RowEvHandlerName="wypozyczeniaviewRowChangeEventHandler" msprop:Generator_RowDeletedName="wypozyczeniaviewRowDeleted" msprop:Generator_UserTableName="wypozyczeniaview" msprop:Generator_RowChangedName="wypozyczeniaviewRowChanged" msprop:Generator_RowEvArgName="wypozyczeniaviewRowChangeEvent" msprop:Generator_RowClassName="wypozyczeniaviewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdWypozyczenia" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdWypozyczenia" msprop:Generator_ColumnPropNameInRow="IdWypozyczenia" msprop:Generator_ColumnPropNameInTable="IdWypozyczeniaColumn" msprop:Generator_UserColumnName="IdWypozyczenia" type="xs:int" />
+              <xs:element name="DataWypozyczenia" msprop:Generator_ColumnVarNameInTable="columnDataWypozyczenia" msprop:Generator_ColumnPropNameInRow="DataWypozyczenia" msprop:Generator_ColumnPropNameInTable="DataWypozyczeniaColumn" msprop:Generator_UserColumnName="DataWypozyczenia" type="xs:dateTime" />
+              <xs:element name="DataZwrotu" msprop:Generator_ColumnVarNameInTable="columnDataZwrotu" msprop:Generator_ColumnPropNameInRow="DataZwrotu" msprop:Generator_ColumnPropNameInTable="DataZwrotuColumn" msprop:Generator_UserColumnName="DataZwrotu" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CzasWypozyczenia" msprop:Generator_ColumnVarNameInTable="columnCzasWypozyczenia" msprop:Generator_ColumnPropNameInRow="CzasWypozyczenia" msprop:Generator_ColumnPropNameInTable="CzasWypozyczeniaColumn" msprop:Generator_UserColumnName="CzasWypozyczenia" type="xs:duration" />
+              <xs:element name="KwotaWypozyczenia" msprop:Generator_ColumnVarNameInTable="columnKwotaWypozyczenia" msprop:Generator_ColumnPropNameInRow="KwotaWypozyczenia" msprop:Generator_ColumnPropNameInTable="KwotaWypozyczeniaColumn" msprop:Generator_UserColumnName="KwotaWypozyczenia" type="xs:int" minOccurs="0" />
+              <xs:element name="UzytkownicySystemu_IdUzytkownika" msprop:Generator_ColumnVarNameInTable="columnUzytkownicySystemu_IdUzytkownika" msprop:Generator_ColumnPropNameInRow="UzytkownicySystemu_IdUzytkownika" msprop:Generator_ColumnPropNameInTable="UzytkownicySystemu_IdUzytkownikaColumn" msprop:Generator_UserColumnName="UzytkownicySystemu_IdUzytkownika" type="xs:int" />
+              <xs:element name="Klienci_IdKlienta" msprop:Generator_ColumnVarNameInTable="columnKlienci_IdKlienta" msprop:Generator_ColumnPropNameInRow="Klienci_IdKlienta" msprop:Generator_ColumnPropNameInTable="Klienci_IdKlientaColumn" msprop:Generator_UserColumnName="Klienci_IdKlienta" type="xs:int" />
+              <xs:element name="Imie" msprop:Generator_ColumnVarNameInTable="columnImie" msprop:Generator_ColumnPropNameInRow="Imie" msprop:Generator_ColumnPropNameInTable="ImieColumn" msprop:Generator_UserColumnName="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko" msprop:Generator_ColumnVarNameInTable="columnNazwisko" msprop:Generator_ColumnPropNameInRow="Nazwisko" msprop:Generator_ColumnPropNameInTable="NazwiskoColumn" msprop:Generator_UserColumnName="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:cennikview" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="sprzetview_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:sprzetview" />
+      <xs:field xpath="mstns:IdSprzetu" />
+    </xs:unique>
+    <xs:unique name="wypozyczeniaview_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:wypozyczeniaview" />
+      <xs:field xpath="mstns:IdWypozyczenia" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
