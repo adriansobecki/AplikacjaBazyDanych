@@ -23,6 +23,7 @@ namespace AplikacjaBazyDanychv2
         public void UpdateForm()
         {
             this.user.Text = Logowanie.imie + " " + Logowanie.nazwisko;
+            this.wypozyczeniaviewTableAdapter.Fill(this.projekt2DataSet1.wypozyczeniaview);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -105,6 +106,64 @@ namespace AplikacjaBazyDanychv2
         {
             NoweWypozyczenie.form= new NoweWypozyczenie();
             NoweWypozyczenie.form.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                MySqlCommand command = new MySqlCommand("ZwrotSprzetu", connection.cnn);
+                //command.CommandTimeout = 15;
+                //CALL `projekt2`.`EdycjaCzasuWypozyczenia`(<{IN Id INT}>, <{IN Czas TIME}>);
+
+                command.CommandType = CommandType.StoredProcedure;
+                var Id = dataGridView1.CurrentRow.Cells["idWypozyczeniaDataGridViewTextBoxColumn"].Value;
+                int spoznienie = 0;
+
+
+                MySqlParameter in1 = new MySqlParameter("Id", Id) { Direction = ParameterDirection.Input };
+                MySqlParameter out1 = new MySqlParameter("Spoznienie", spoznienie) { Direction = ParameterDirection.Output };
+
+                command.Parameters.Add(in1);
+                command.Parameters.Add(out1);
+
+
+
+
+                MySqlDataReader rdr = command.ExecuteReader();
+                spoznienie = int.Parse( out1.Value.ToString());
+                rdr.Close();
+
+                if(spoznienie>0)
+                {
+                    MySqlDataAdapter sq = new MySqlDataAdapter("SELECT informacjeowypozyczeniach.*, sprzet.RodzajSprzetu_IdRodzajuSprzetu" +
+                        " FROM informacjeowypozyczeniach" +
+                        " INNER JOIN sprzet ON informacjeowypozyczeniach.Sprzet_IdSprzetu = sprzet.IdSprzetu" +
+                        " WHERE Wypozyczenia_IdWypozyczenia ="+Id.ToString()+";", connection.cnn);
+                    DataTable dt = new DataTable();
+                    sq.Fill(dt);
+                   
+                    foreach(DataRow row in dt.Rows)
+                    {
+                        MySqlCommand command2 = new MySqlCommand("NaliczenieOplatyKarnej", connection.cnn);
+                        command2.CommandType = CommandType.StoredProcedure;
+                        int idsprzetu = int.Parse( row[3].ToString());
+                        int rodzaj = int.Parse(row[4].ToString());
+
+                        MySqlParameter in2 = new MySqlParameter("IdWyp", int.Parse(Id.ToString())) { Direction = ParameterDirection.Input };
+                        MySqlParameter in3 = new MySqlParameter("IdSprz", idsprzetu) { Direction = ParameterDirection.Input };
+                        MySqlParameter in4 = new MySqlParameter("Rodzaj", rodzaj) { Direction = ParameterDirection.Input };
+                        MySqlParameter in5 = new MySqlParameter("Delay", spoznienie) { Direction = ParameterDirection.Input };
+
+                        command2.Parameters.Add(in2);
+                        command2.Parameters.Add(in3);
+                        command2.Parameters.Add(in4);
+                        command2.Parameters.Add(in5);
+                        command2.ExecuteNonQuery();
+
+                    }
+                }
+            }
         }
     }
 }
