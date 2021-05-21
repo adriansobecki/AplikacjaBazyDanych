@@ -52,6 +52,10 @@ namespace AplikacjaBazyDanychv2
             DataColumn column2 = dt.Columns.Add("Rozmiar", typeof(string));
             DataColumn column3 = dt.Columns.Add("Uwagi", typeof(string));
             DataColumn column4 = dt.Columns.Add("Rodzaj", typeof(string));
+            column1.ReadOnly = true;
+            column2.ReadOnly = true;
+            column3.ReadOnly = true;
+            column4.ReadOnly = true;
             //column.AllowDBNull = false;
             //column.Unique = true;
 
@@ -117,9 +121,13 @@ OUT NrDowodu varchar(10))
                 MySqlDataReader rdr = command.ExecuteReader();
                 if (out1.Value != DBNull.Value)
                 {
+    
                     textBox2.Text = out2.Value.ToString();
                     textBox3.Text = out3.Value.ToString();
-                    textBox4.Text = out4.Value.ToString();
+                    if(out4.Value!=DBNull.Value)
+                        textBox4.Text = out4.Value.ToString();
+                   
+                    
                     userExist = int.Parse(out1.Value.ToString());
                 }
                 else

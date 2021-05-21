@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,8 @@ namespace AplikacjaBazyDanychv2
             }
             Sprzet.form.Hide();
             Rodzaje.form.Show();
+            Sprzet.form.Close();
+            Sprzet.form = null;
         }
 
         private void btnCennik_Click(object sender, EventArgs e)
@@ -38,7 +41,10 @@ namespace AplikacjaBazyDanychv2
                 Cennik.form = new Cennik();
             }
             Sprzet.form.Hide();
+            Cennik.form.UpdateForm();
             Cennik.form.Show();
+            Sprzet.form.Close();
+            Sprzet.form = null;
         }
 
 
@@ -50,6 +56,9 @@ namespace AplikacjaBazyDanychv2
             }
             Sprzet.form.Hide();
             Wypozyczenia.form.Show();
+            Sprzet.form.Close();
+            Sprzet.form = null;
+
         }
 
 
@@ -57,15 +66,46 @@ namespace AplikacjaBazyDanychv2
         private void bntWyloguj_Click(object sender, EventArgs e)
         {
             Sprzet.form.Hide();
+            Logowanie.form.clear();
             Logowanie.form.Show();
+            //Logowanie.form.clear();
         }
 
         private void Sprzet_Load(object sender, EventArgs e)
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'projekt2DataSet5.sprzet' . Możesz go przenieść lub usunąć.
-            this.sprzetTableAdapter.Fill(this.projekt2DataSet5.sprzet);
-            opcjeRodzaj();
+            UpdateForm();
+            /*
             opcjeDostepnosc();
+            opcjeRodzaj();
+            //MySqlDataAdapter sq = new MySqlDataAdapter("SELECT * FROM sprzet;", connection.cnn);
+            String queryString = "SELECT * FROM sprzet";
+            DbCommand command = DbProviderFactories.GetFactory(connection.cnn).CreateCommand();
+            command.CommandText = queryString;
+            command.Connection = connection.cnn;
+
+            DbDataAdapter adapter = DbProviderFactories.GetFactory(connection.cnn).CreateDataAdapter();
+            adapter.SelectCommand = command;
+
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            dataGridView1.AutoGenerateColumns = true;
+
+            dataGridView1.DataSource = table;
+            
+            //dataGridView1.AutoGenerateColumns = true;
+
+
+
+
+
+            //sq.Fill(dt);
+            //dataGridView1.DataSource = dt;
+            //this.sprzetTableAdapter.Fill(this.projekt2DataSet5.sprzet);
+            //opcjeRodzaj();
+            //opcjeDostepnosc();
+            */
             this.user.Text = Logowanie.imie + " " + Logowanie.nazwisko;
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'projekt2DataSet2.sprzetview' . Możesz go przenieść lub usunąć.
             //this.sprzetviewTableAdapter.Fill(this.projekt2DataSet2.sprzetview);
@@ -75,12 +115,15 @@ namespace AplikacjaBazyDanychv2
 
         private void opcjeRodzaj()
         {
+            rodzajSprzetuIdRodzajuSprzetuDataGridViewTextBoxColumn.DataSource = null;
             MySqlDataAdapter sq = new MySqlDataAdapter("SELECT IdRodzajuSprzetu,NazwaSprzetu FROM rodzajesprzetu;", connection.cnn);
             DataTable dt = new DataTable();
             sq.Fill(dt);
             rodzajSprzetuIdRodzajuSprzetuDataGridViewTextBoxColumn.ValueMember = "IdRodzajuSprzetu";
             rodzajSprzetuIdRodzajuSprzetuDataGridViewTextBoxColumn.DisplayMember = "NazwaSprzetu";
             rodzajSprzetuIdRodzajuSprzetuDataGridViewTextBoxColumn.DataSource = dt;
+
+
         }
 
         private void opcjeDostepnosc()
@@ -104,6 +147,7 @@ namespace AplikacjaBazyDanychv2
             dt.Rows.InsertAt(item1, 0);
             dt.Rows.InsertAt(item2, 1);
             dt.Rows.InsertAt(item3, 2);
+
             dostepnoscDataGridViewTextBoxColumn.ValueMember = "Dostepnosc";
             dostepnoscDataGridViewTextBoxColumn.DisplayMember = "Dostepnosc";
             dostepnoscDataGridViewTextBoxColumn.DataSource = dt;
@@ -213,5 +257,43 @@ namespace AplikacjaBazyDanychv2
                 e.Cancel = true;
             semaphor = 0;
         }
+
+
+        public void UpdateForm()
+        {
+            //dataGridView1.Refresh();
+            //dataGridView1.DataSource = null;
+            opcjeDostepnosc();
+            opcjeRodzaj();
+            //MySqlDataAdapter sq = new MySqlDataAdapter("SELECT * FROM sprzet;", connection.cnn);
+            String queryString = "SELECT * FROM sprzet";
+            DbCommand command = DbProviderFactories.GetFactory(connection.cnn).CreateCommand();
+            command.CommandText = queryString;
+            command.Connection = connection.cnn;
+
+            DbDataAdapter adapter = DbProviderFactories.GetFactory(connection.cnn).CreateDataAdapter();
+            adapter.SelectCommand = command;
+
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            dataGridView1.AutoGenerateColumns = true;
+            
+            dataGridView1.DataSource = table;
+            //opcjeDostepnosc();
+            //opcjeRodzaj();
+            //dataGridView1.AutoGenerateColumns = true;
+
+
+
+
+            //sq.Fill(dt);
+            //dataGridView1.DataSource = dt;
+            //this.sprzetTableAdapter.Fill(this.projekt2DataSet5.sprzet);
+            //opcjeRodzaj();
+            //opcjeDostepnosc();
+            //this.user.Text = Logowanie.imie + " " + Logowanie.nazwisko;
+        }
+
     }
 }

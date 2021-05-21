@@ -64,7 +64,7 @@ namespace AplikacjaBazyDanychv2
             this.groupBox1.Controls.Add(this.bntWyloguj);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1278, 77);
+            this.groupBox1.Size = new System.Drawing.Size(1469, 77);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -72,9 +72,9 @@ namespace AplikacjaBazyDanychv2
             // 
             this.user.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.user.Location = new System.Drawing.Point(955, 28);
+            this.user.Location = new System.Drawing.Point(1022, 28);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(173, 30);
+            this.user.Size = new System.Drawing.Size(286, 30);
             this.user.TabIndex = 6;
             // 
             // label1
@@ -82,7 +82,7 @@ namespace AplikacjaBazyDanychv2
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(825, 31);
+            this.label1.Location = new System.Drawing.Point(880, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 6;
@@ -130,7 +130,7 @@ namespace AplikacjaBazyDanychv2
             // bntWyloguj
             // 
             this.bntWyloguj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntWyloguj.Location = new System.Drawing.Point(1134, 21);
+            this.bntWyloguj.Location = new System.Drawing.Point(1325, 21);
             this.bntWyloguj.Name = "bntWyloguj";
             this.bntWyloguj.Size = new System.Drawing.Size(138, 43);
             this.bntWyloguj.TabIndex = 4;
@@ -155,7 +155,7 @@ namespace AplikacjaBazyDanychv2
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1278, 612);
+            this.dataGridView1.Size = new System.Drawing.Size(1469, 612);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserAddedRow);
@@ -201,7 +201,7 @@ namespace AplikacjaBazyDanychv2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 783);
+            this.ClientSize = new System.Drawing.Size(1493, 783);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Rodzaje";

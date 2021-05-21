@@ -32,8 +32,13 @@ namespace AplikacjaBazyDanychv2
             DataTable dt = new DataTable();
 
             sq.Fill(dt);
-            
+            foreach(DataColumn col in dt.Columns)
+            {
+                col.ReadOnly = true;
+            }
             dataGridView1.DataSource = dt;
+
+            //dataGridView1.Columns[0].ReadOnly = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

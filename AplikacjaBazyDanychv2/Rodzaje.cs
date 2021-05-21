@@ -29,7 +29,9 @@ namespace AplikacjaBazyDanychv2
                 Cennik.form = new Cennik();
             }
             Rodzaje.form.Hide();
+            Cennik.form.UpdateForm();
             Cennik.form.Show();
+            //Cennik.form.UpdateForm();
         }
 
 
@@ -51,7 +53,9 @@ namespace AplikacjaBazyDanychv2
                 Sprzet.form = new Sprzet();
             }
             Rodzaje.form.Hide();
+            Sprzet.form.UpdateForm();
             Sprzet.form.Show();
+            //Sprzet.form.Update();
         }
 
 
@@ -59,6 +63,8 @@ namespace AplikacjaBazyDanychv2
         {
             Rodzaje.form.Hide();
             Logowanie.form.Show();
+            Logowanie.form.clear();
+
         }
 
         private void Rodzaje_Load(object sender, EventArgs e)
@@ -68,6 +74,7 @@ namespace AplikacjaBazyDanychv2
             this.user.Text = Logowanie.imie + " " + Logowanie.nazwisko;
 
         }
+
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -159,5 +166,6 @@ namespace AplikacjaBazyDanychv2
                 e.Cancel = true;
             semaphor = 0;
         }
+
     }
 }

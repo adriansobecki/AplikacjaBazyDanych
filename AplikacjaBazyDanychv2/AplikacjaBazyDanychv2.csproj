@@ -132,6 +132,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>projekt2DataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Szczegoly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Szczegoly.Designer.cs">
+      <DependentUpon>Szczegoly.cs</DependentUpon>
+    </Compile>
     <Compile Include="WybierzSprzet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NoweWypozyczenie.resx">
       <DependentUpon>NoweWypozyczenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Szczegoly.resx">
+      <DependentUpon>Szczegoly.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WybierzSprzet.resx">
       <DependentUpon>WybierzSprzet.cs</DependentUpon>

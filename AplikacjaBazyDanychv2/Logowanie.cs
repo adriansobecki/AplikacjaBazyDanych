@@ -24,6 +24,32 @@ namespace AplikacjaBazyDanychv2
             InitializeComponent();
         }
 
+        public void clear()
+        {
+            textLogin.Text = "";
+            textHaslo.Text = "";
+
+            if (Wypozyczenia.form != null)
+            {
+                Wypozyczenia.form.Close();
+                Wypozyczenia.form = null;
+            }
+            if (Sprzet.form != null)
+            {
+                Sprzet.form.Close();
+                Sprzet.form = null;
+            }
+            if (Rodzaje.form != null)
+            {
+                Rodzaje.form.Close();
+                Rodzaje.form = null;
+            }
+            if (Cennik.form != null)
+            {
+                Cennik.form.Close();
+                Cennik.form = null;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             string login = textLogin.Text.ToString();
@@ -76,13 +102,15 @@ namespace AplikacjaBazyDanychv2
                 }
                 Logowanie.form.Hide();
                 Wypozyczenia.form.Show();
-                Wypozyczenia.form.UpdateForm();
+                //Wypozyczenia.form.UpdateForm();
+
             }
             else
             {
-                MessageBox.Show("Złe dane");
+                MessageBox.Show("Niepoprawne dane");
             }
             rdr.Close();
         }
+
     }
 }

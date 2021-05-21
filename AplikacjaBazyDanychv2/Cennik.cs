@@ -38,6 +38,7 @@ namespace AplikacjaBazyDanychv2
                 Sprzet.form = new Sprzet();
             }
             Cennik.form.Hide();
+            Sprzet.form.UpdateForm();
             Sprzet.form.Show();
         }
 
@@ -55,19 +56,28 @@ namespace AplikacjaBazyDanychv2
         {
             Cennik.form.Hide();
             Logowanie.form.Show();
+            Logowanie.form.clear();
         }
 
         private void Cennik_Load(object sender, EventArgs e)
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'projekt2DataSet5.cennik' . Możesz go przenieść lub usunąć.
-            this.cennikTableAdapter.Fill(this.projekt2DataSet5.cennik);
+            //this.cennikTableAdapter.Fill(this.projekt2DataSet5.cennik);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'projekt2DataSet4.cennikview' . Możesz go przenieść lub usunąć.
             //this.cennikviewTableAdapter1.Fill(this.projekt2DataSet4.cennikview);
+            this.cennikTableAdapter.Fill(this.projekt2DataSet5.cennik);
             opcjeRodzaj();
             this.user.Text = Logowanie.imie + " " + Logowanie.nazwisko;
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'projekt2DataSet3.cennikview' . Możesz go przenieść lub usunąć.
             //this.cennikviewTableAdapter.Fill(this.projekt2DataSet3.cennikview);
 
+        }
+
+        public void UpdateForm()
+        {
+            this.cennikTableAdapter.Update(this.projekt2DataSet5.cennik);
+            opcjeRodzaj();
+            //this.cennikTableAdapter.Fill(this.projekt2DataSet5.cennik);
         }
 
 

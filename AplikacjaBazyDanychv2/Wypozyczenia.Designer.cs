@@ -62,6 +62,7 @@ namespace AplikacjaBazyDanychv2
             this.klienciIdKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Szczegoly = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wypozyczeniaBindingSource)).BeginInit();
@@ -83,14 +84,14 @@ namespace AplikacjaBazyDanychv2
             this.groupBox2.Controls.Add(this.NewWypozyczenie);
             this.groupBox2.Location = new System.Drawing.Point(12, 95);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1278, 144);
+            this.groupBox2.Size = new System.Drawing.Size(1469, 144);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(748, 46);
+            this.button7.Location = new System.Drawing.Point(843, 46);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(171, 52);
             this.button7.TabIndex = 8;
@@ -101,7 +102,7 @@ namespace AplikacjaBazyDanychv2
             // NewWypozyczenie
             // 
             this.NewWypozyczenie.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NewWypozyczenie.Location = new System.Drawing.Point(299, 46);
+            this.NewWypozyczenie.Location = new System.Drawing.Point(394, 46);
             this.NewWypozyczenie.Name = "NewWypozyczenie";
             this.NewWypozyczenie.Size = new System.Drawing.Size(171, 52);
             this.NewWypozyczenie.TabIndex = 7;
@@ -122,7 +123,7 @@ namespace AplikacjaBazyDanychv2
             this.groupBox1.Controls.Add(this.bntWyloguj);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1278, 77);
+            this.groupBox1.Size = new System.Drawing.Size(1469, 77);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
@@ -130,9 +131,9 @@ namespace AplikacjaBazyDanychv2
             // 
             this.user.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.user.Location = new System.Drawing.Point(955, 28);
+            this.user.Location = new System.Drawing.Point(1022, 28);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(173, 30);
+            this.user.Size = new System.Drawing.Size(286, 30);
             this.user.TabIndex = 6;
             // 
             // label1
@@ -140,7 +141,7 @@ namespace AplikacjaBazyDanychv2
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(825, 31);
+            this.label1.Location = new System.Drawing.Point(880, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 6;
@@ -188,7 +189,7 @@ namespace AplikacjaBazyDanychv2
             // bntWyloguj
             // 
             this.bntWyloguj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntWyloguj.Location = new System.Drawing.Point(1134, 21);
+            this.bntWyloguj.Location = new System.Drawing.Point(1325, 21);
             this.bntWyloguj.Name = "bntWyloguj";
             this.bntWyloguj.Size = new System.Drawing.Size(138, 43);
             this.bntWyloguj.TabIndex = 4;
@@ -250,6 +251,8 @@ namespace AplikacjaBazyDanychv2
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -265,14 +268,16 @@ namespace AplikacjaBazyDanychv2
             this.uzytkownicySystemuIdUzytkownikaDataGridViewTextBoxColumn,
             this.klienciIdKlientaDataGridViewTextBoxColumn,
             this.imieDataGridViewTextBoxColumn,
-            this.nazwiskoDataGridViewTextBoxColumn});
+            this.nazwiskoDataGridViewTextBoxColumn,
+            this.Szczegoly});
             this.dataGridView1.DataSource = this.wypozyczeniaviewBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 289);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1278, 482);
+            this.dataGridView1.Size = new System.Drawing.Size(1469, 482);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // idWypozyczeniaDataGridViewTextBoxColumn
@@ -346,11 +351,23 @@ namespace AplikacjaBazyDanychv2
             this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
             this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Szczegoly
+            // 
+            this.Szczegoly.FillWeight = 80F;
+            this.Szczegoly.HeaderText = "Szczegoly";
+            this.Szczegoly.MinimumWidth = 6;
+            this.Szczegoly.Name = "Szczegoly";
+            this.Szczegoly.ReadOnly = true;
+            this.Szczegoly.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Szczegoly.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Szczegoly.Text = "Szczegoly";
+            this.Szczegoly.UseColumnTextForButtonValue = true;
+            // 
             // Wypozyczenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 783);
+            this.ClientSize = new System.Drawing.Size(1493, 783);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -408,5 +425,6 @@ namespace AplikacjaBazyDanychv2
         private System.Windows.Forms.DataGridViewTextBoxColumn klienciIdKlientaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Szczegoly;
     }
 }
