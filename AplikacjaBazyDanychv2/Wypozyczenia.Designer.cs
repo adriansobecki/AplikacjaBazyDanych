@@ -31,6 +31,8 @@ namespace AplikacjaBazyDanychv2
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.NewWypozyczenie = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -80,6 +82,8 @@ namespace AplikacjaBazyDanychv2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.NewWypozyczenie);
             this.groupBox2.Location = new System.Drawing.Point(12, 95);
@@ -88,10 +92,32 @@ namespace AplikacjaBazyDanychv2
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button2.Location = new System.Drawing.Point(1241, 46);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(171, 52);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Restore";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button1.Location = new System.Drawing.Point(845, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 52);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Backup";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(843, 46);
+            this.button7.Location = new System.Drawing.Point(449, 46);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(171, 52);
             this.button7.TabIndex = 8;
@@ -102,7 +128,7 @@ namespace AplikacjaBazyDanychv2
             // NewWypozyczenie
             // 
             this.NewWypozyczenie.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NewWypozyczenie.Location = new System.Drawing.Point(394, 46);
+            this.NewWypozyczenie.Location = new System.Drawing.Point(71, 46);
             this.NewWypozyczenie.Name = "NewWypozyczenie";
             this.NewWypozyczenie.Size = new System.Drawing.Size(171, 52);
             this.NewWypozyczenie.TabIndex = 7;
@@ -426,5 +452,7 @@ namespace AplikacjaBazyDanychv2
         private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Szczegoly;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

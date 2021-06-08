@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +25,7 @@ namespace AplikacjaBazyDanychv2
             
             InitializeComponent();
         }
+
 
         public void clear()
         {
@@ -112,5 +115,16 @@ namespace AplikacjaBazyDanychv2
             rdr.Close();
         }
 
+        private void Logowanie_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+            connectionStringsSection.ConnectionStrings["AplikacjaBazyDanychv2.Properties.Settings.projekt2ConnectionString"].ConnectionString = "";
+            config.Save();
+            ConfigurationManager.RefreshSection("connectionStrings");
+
+            ConfigurationManager.RefreshSection("appSettings");
+            connection.cnn.Close();
+        }
     }
 }

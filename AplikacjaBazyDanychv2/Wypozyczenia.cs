@@ -221,5 +221,65 @@ namespace AplikacjaBazyDanychv2
                 szczegoly.Show();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            string strCmdText;
+            var date = DateTime.Now;
+            strCmdText = "/C start /b /w \"\" \"C:\\Program Files\\MySQL\\MySQL " +
+                "Server 8.0\\bin\\mysqldump.exe\" -u root -p projekt2 > " +
+                "C:\\Users\\Adrian\\Desktop\\Backup\\db_backup"
+                +date.ToString("MM_dd_yyyy_HH_mm")+".sql";
+            System.Diagnostics.Process.Start("C:\\Users\\Adrian\\Desktop" +
+                "\\cmd.lnk", strCmdText);
+
+
+            /*
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            //startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = Environment.ExpandEnvironmentVariables("%SystemRoot%") + @"\System32\cmd.exe";
+            startInfo.Arguments = strCmdText;
+            //startInfo.Verb = "runas";
+            process.StartInfo = startInfo;
+            process.Start();
+            */
+            /*
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                using (MySqlBackup mb = new MySqlBackup(cmd))
+                {
+                    cmd.Connection = conn;
+                    conn.Open();
+                    mb.ExportToFile(file);
+                    conn.Close();
+                }
+            }
+            */
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "C:\\Users\\Adrian\\Desktop\\Backup\\";
+            //openFileDialog1.Filter = "Database files (*.mdb, *.accdb)|*.mdb;*.accdb";
+            openFileDialog1.FilterIndex = 0;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFileName = openFileDialog1.FileName;
+                string strCmdText;
+                MessageBox.Show(selectedFileName);
+                strCmdText = "/C start /b /w \"\" \"C:\\Program Files\\MySQL\\" +
+                    "MySQL Server 8.0\\bin\\mysql.exe\" -u root -p projekt2 < "+selectedFileName;
+                System.Diagnostics.Process.Start("C:\\Users\\Adrian\\Desktop\\cmd.lnk", strCmdText);
+
+
+                //...
+            }
+        }
     }
 }

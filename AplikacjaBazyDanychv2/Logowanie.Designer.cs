@@ -118,15 +118,16 @@ namespace AplikacjaBazyDanychv2
             this.label2.TabIndex = 1;
             this.label2.Text = "Hasło";
             // 
-            // Form1
+            // Logowanie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 783);
             this.Controls.Add(this.group);
-            this.Name = "Form1";
+            this.Name = "Logowanie";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Logowanie_FormClosed);
             this.group.ResumeLayout(false);
             this.group.PerformLayout();
             this.ResumeLayout(false);
